@@ -1,0 +1,47 @@
+Under unsupervised super resolution texhniques comes a technique known as zero shot in which the we dont have the data set since we dont have the dataset there are no LR and HR pair of images the idea is on the present image only we create a the low resolution images of it till a certain level and then pair them 
+Mathematically representing , 
+image is A then we take some constant 1>s>0 and we create the low resolution image of this such that 0.5A, 0.75A,0.2A etc. but making s,s^2,s^3 and so on and then we pair them up (0.75A,0.5A),(0.5A,O.2A) like this the training data is created from a single image and we donot need a training dataset 
+Every image gets its own superresolution model 
+
+MAIN IDEA OF ZEROSHOT : 
+If there are repeated patterns in an image when we downsample it the clarity is gone but the structure is same so upon encountering the similar type of pattern instead of applying the enhacement technique again and again from scratch as soon as it recognizes the same pattern it starts applying the same technique that it applied on the earlier pattern 
+for example blurry edge to sharp edge 
+
+
+
+
+When we are training on a single image doesn't the model gets overtrained on the single image?
+The network never sees the original High resolution image it only sees the just better version of the present data available to the model , It rather learns the rule less better version will have a better version it learns the relationship between the scales 
+
+
+What about the model learning the noise ? 
+
+
+
+
+Does the training happen sequentially since we recognize the similar pattern in the images ?
+- Suppose we create pairs I, 0.5I and 0.25I the pairs are I,0.5I and 0.5I , 0.25I 
+- During training all the pairs are shuffled patch 
+Patch from 0.25I → Patch from 0.5I
+Patch from 0.5I  → Patch from 1.0I
+Patch from 0.25I → Patch from 0.5I
+Patch from 0.5I  → Patch from 1.0I
+...
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
