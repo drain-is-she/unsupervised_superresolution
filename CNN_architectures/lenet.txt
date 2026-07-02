@@ -1,1 +1,21 @@
+*LENET* 
+-> initial architecture of the CNN
+-> really shallow network suitable for small datasets 
+-> the architecture goes as follow 
+   i/p-> conv->subsample->conv->subsample->fully connected -> fully connected -> gaussian connection -> output 
 
+-> Mathematical representation for better understanding 
+
+-> input : 32,32,1 (grayscale image) 
+   we have 6 filters each of size 5x5x1 
+   for each pixel we have like weighted sum of each pixel y = wixi 
+   then we add bias to it zi = wixi + bi 
+   now introducing our activation function max(0,zi) 
+   output size = 28x28x6 
+   followed by average pooling 
+   second convolution 
+   then we flatten it 
+   and passing on to the fully connected layer 
+   applying softmax layer 
+   finding loss with the cross entropy loss 
+   computing the gradient and performing the backpropogation 
